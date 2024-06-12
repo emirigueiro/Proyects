@@ -7,17 +7,19 @@ VERSION = '1.0.0' #Muy importante, deberéis ir cambiando la versión de vuestra
 PACKAGE_NAME = 'dataprofile' #Debe coincidir con el nombre de la carpeta 
 AUTHOR = 'Emiliano Rigueiro' #Modificar con vuestros datos
 AUTHOR_EMAIL = 'rigueiroemiliano@gmail.com' #Modificar con vuestros datos
-URL = 'https://github.com/afernandez119' #Modificar con vuestros datos
+URL = 'https://github.com/emirigueiro/Proyects' #Modificar con vuestros datos
 
 LICENSE = 'MIT' #Tipo de licencia
-DESCRIPTION = 'Librería para leer ficheros PDFs y extraer la información en formato str' #Descripción corta
+DESCRIPTION = 'This library takes one data frame and returns another with a detailed profile of each column' #Descripción corta
 LONG_DESCRIPTION = (HERE / "README.md").read_text(encoding='utf-8') #Referencia al documento README con una descripción más elaborada
 LONG_DESC_TYPE = "text/markdown"
 
 
 #Paquetes necesarios para que funcione la libreía. Se instalarán a la vez si no lo tuvieras ya instalado
 INSTALL_REQUIRES = [
-      'pymupdf'
+      'pandas',
+      'prettytable',
+      'numpy' 
       ]
 
 setup(
