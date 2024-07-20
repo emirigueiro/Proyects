@@ -1,51 +1,74 @@
-DataProfile Library
+# DataProfile Library
 
-Description: the principal fuction of this library is create a data base profile fast view. For this recorre a dataframe in order to analyze diferentes relevants features for each column. 
+## Description
+*The main function of this library is to generate a Data Profile in a database. For this, it takes a DataFrame as input and analyzes basic aspects such as the number of unique records, duplicates, null and empty data, among others. Each of these points is analyzed for each of the columns of the DataFrame.*
 
-The princial features are:
-                           Count: count the number of records. Return a numeric
+### Principal Features
 
-                           Count distinct: count the number of distincs recors. Return a numeric.
+- **Count:** Count the number of records. Returns a numeric value.
 
-                           Unique: count the unique records. Return a numeric.
+- **Count Distinct:** Count the number of distinct records. Returns a numeric value.
 
-                           Id probability: calculate a probability that the column be a id. For that evaluate the data type, the name of the column, the number of unique ids, the amoun of empty and null records. And with all this information estimate a probability. Return a percent.
+- **Unique:** Count the unique records. Returns a numeric value.
 
-                           Email probability: Find the probability that the column contains emails. To do this, count the number of @ and valid domains, then estimate a probbility. Return a percent.
+- **ID Probability:** Calculate the probability that the column is an ID. Evaluates the data type, the name of the column, the number of unique IDs, the amount of empty and null records, and estimates a probability. Returns a percent.
 
-                           Duplicate: Count the duplicate recors per column. Return a numeric. Return a numeric.
+- **Email Probability:** Find the probability that the column contains emails. Counts the number of "@" symbols and valid domains, then estimates a probability. Returns a percent.
 
-                           Numeric: Define whether the data type is numeric. Returns a "True" only if all records in the column are numeric.
+- **Duplicate:** Count the duplicate records per column. Returns a numeric value.
 
-                           Letter: Define whether the data type is string. Returns a "True" only if all records in the column are string.
+- **Numeric:** Determine whether the data type is numeric. Returns `True` only if all records in the column are numeric.
 
-                           Bool: Define whether the data type is bool. Returns a "True" only if all records in the column are bool.
+- **Letter:** Determine whether the data type is a string. Returns `True` only if all records in the column are strings.
 
-                           Empty: Count the number of empty records per column. Return a numeric.
+- **Bool:** Determine whether the data type is boolean. Returns `True` only if all records in the column are booleans.
 
-                           Cero: Count the number of ceros per column. Return a numeric.
+- **Empty:** Count the number of empty records per column. Returns a numeric value.
 
-                           Null: Count the number of null records per column. Return a numeric.
+- **Zero:** Count the number of zeros per column. Returns a numeric value.
 
-Pre requisitos:
-               Pandas
-               Numpy
-               Prettytable
-        
-Fuctions:
-         dataprofile(DF): this is the main function. takes as input a DataFrame and returns another one with all the features described above.
+- **Null:** Count the number of null records per column. Returns a numeric value.
 
 
-Example:
+### Install Requires
 
-1) The first step is install the librari using pip instal dataprofile:
-![alt text](image-2.png)
+- Pandas
+- Numpy
+- Prettytable
 
-2) The second step is import the dataprofile librari: import dataprofile as dp.
-![alt text](image-3.png)
+### Functions
 
-3) The therd step is creat or importa a Dataframe. In this case use read_csv from Pandas for import a csv and creat a DataFrame.
-![alt text](image-1.png)
+- **dataprofile(DF):** *This is the main function. It takes a DataFrame as input and returns another one with all the features described above.*
 
-4) The fored step is use the fuction dataprofile on a Dataframe on this way dp.dataprofile(DataFrame)
-![alt text](image.png)
+
+### How to Start
+
+1. **Install the library using pip:**
+    ```bash
+    pip install dataprofile
+    ```
+
+
+2. **Import the dataprofile library:**
+    ```python
+    import dataprofile as dp
+    ```
+
+
+3. **Create or import a DataFrame:**
+    In this case, use `read_csv` from Pandas to import a CSV and create a DataFrame.
+    ```python
+    import pandas as pd
+
+    def READ_CSV(file_path):
+        return pd.read_csv(file_path, sep=",", encoding='latin-1')
+
+    FILE = READ_CSV('base-primer-relev-dispositivos.csv')
+    ```
+
+
+4. **Use the `dataprofile` function on a DataFrame:**
+    ```python
+    print(dp.dataprofile(FILE))
+    ```
+
